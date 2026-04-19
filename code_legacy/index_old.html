@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Name — Academic Page</title>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #666;
+    --link: #1a73e8;
+    --sidebar: #f4f5f7;
+    --border: #ddd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #f1f3f7;
+      --muted: #b3b8c3;
+      --link: #8ab4f8;
+      --sidebar: #1c1f27;
+      --border: #2a2f3a;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, sans-serif;
+    display: flex;
+    height: 100vh;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background: var(--sidebar);
+    border-right: 1px solid var(--border);
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sidebar h2 {
+    font-size: 16px;
+    margin: 0 0 10px 10px;
+    color: var(--muted);
+  }
+  .tab {
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 15px;
+    color: var(--fg);
+  }
+  .tab:hover {
+    background: rgba(0,0,0,0.05);
+  }
+  .tab[aria-selected="true"] {
+    background: var(--link);
+    color: white;
+  }
+
+  /* Content area */
+  .content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+  }
+  .panel {
+    display: none;
+  }
+  .panel[data-active="true"] {
+    display: block;
+  }
+  h1, h2 {
+    margin-top: 0;
+  }
+   .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+    .hero { display:grid; grid-template-columns: 120px 1fr; gap: 24px; align-items:center; }
+    .avatar {
+      width:120px; height:120px; border-radius:50%; object-fit:cover; background:#ddd; border:1px solid var(--border);
+    }
+    h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 6px; line-height:1.2; }
+    .title { color: var(--muted); margin: 0 0 12px; }
+    .links { display:flex; flex-wrap:wrap; gap:12px; }
+    .badge {
+      display:inline-block; padding:6px 10px; background:var(--card); border:1px solid var(--border);
+      border-radius:999px; font-size:14px;
+    }
+  .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar" role="tablist" aria-label="Sections">
+    <h2>Menu</h2>
+    <button class="tab" role="tab" id="tab-aboutme" aria-controls="panel-aboutme" aria-selected="true">About Me</button>
+    <button class="tab" role="tab" id="tab-CMS" aria-controls="panel-CMS" aria-selected="false">CMS</button>
+    <button class="tab" role="tab" id="tab-DarkQuest" aria-controls="panel-DarkQuest" aria-selected="false">DarkQuest</button>
+
+  </nav>
+
+  <!-- Main content -->
+  <main class="content">
+    <section id="panel-aboutme" class="panel" role="tabpanel" aria-labelledby="tab-aboutme" data-active="true">
+      <header>
+      <div class="wrap hero">
+        <img class="avatar" src="portrait.jpg" alt="Portrait of Your Name" />
+        <div>
+          <h1>Xinlong Liu</h1>
+          <p class="title">PhD student, Department of Physics and Astronomy, Johns Hopkins University</p>
+          <p class="title">High Energy Physics Experiment</p>
+          <div class="links" aria-label="Profile links">
+            <!-- 
+            <a class="badge" href="cv.pdf">CV (PDF)</a>
+            <a class="badge" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+            <a class="badge" href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+            -->
+            <a class="badge" href="https://github.com/Xinlong12580">GitHub</a>
+            <a class="badge" href="mailto:xliu5974@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap" id="content">
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          I am a <strong>PhD student</strong> in the <strong>Department of Physics & Astronomy</strong> at the <strong>Johns Hopkins University</strong>. 
+
+        </p>
+      </section>
+
+      <section id="interests">
+        <h2>Research Groups</h2>
+        <ul class="clean grid-2">
+          <li>CMS</li>
+          <li>DarkQuest</li>
+        </ul>
+      </section>
+    </section>
+
+
+    <section id="panel-CMS" class="panel" role="tabpanel" aria-labelledby="tab-CMS">
+      <h2>CMS</h2>
+      <ul>
+        <li>to be updated</li>
+      </ul>
+    </section>
+
+    <section id="panel-DarkQuest" class="panel" role="tabpanel" aria-labelledby="tab-DarkQuest">
+      <h2>DarkQuest</h2>
+      <ul>
+        <li>to be updated</li>
+      </ul>
+    </section>
+
+
+  </main>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+
+  function activate(tabId) {
+    tabs.forEach(t => t.setAttribute('aria-selected', t.id === tabId));
+    panels.forEach(p => p.dataset.active = (p.id === document.getElementById(tabId).getAttribute('aria-controls')));
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activate(tab.id));
+  });
+
+  // Init
+  activate('tab-about');
+</script>
+</body>
+</html>
