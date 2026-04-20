@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Xinlong's Webpage</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="config.js" defer></script>
+    <script type="module" src="main.js" defer></script>
 </head>
 
 <body>
-  <nav class="sidebar" role="tablist" aria-label="Sections">
+  <nav class="sidebar" role="tablist" id="navi" aria-label="Sections">
     <h2>Menu</h2>
-    <button class="tab" role="tab" id="tab-AboutMe" aria-controls="panel-AboutMe" aria-selected="true" data-page="About_Me.html">About Me</button>
-    <button class="tab" role="tab" id="tab-Reseach" aria-controls="panel-Reseach" aria-selected="false" data-page="Research.html">Reseach</button>
-    <button class="tab" role="tab" id="tab-StudyNote" aria-controls="panel-StudyNote" aria-selected="false" data-page="StudyNote.html">Study Note</button>
-    <button class="tab" role="tab" id="tab-Blog" aria-controls="panel-Blog" aria-selected="false" data-page="Blog.html">Blog</button>
+    <!-- -->
+    <button class="tab" role="tab" id="tab-AboutMe" aria-controls="panel-AboutMe" aria-selected="true" data-page="pages/AboutMe/AboutMe.html">About Me</button>
+    <button class="tab" role="tab" id="tab-Reseach" aria-controls="panel-Reseach" aria-selected="false" data-page="pages/Research/Research.html">Reseach</button>
+    <button class="tab" role="tab" id="tab-StudyNote" aria-controls="panel-StudyNote" aria-selected="false" data-page="pages/StudyNote/StudyNote.html">Study Note</button>
+    <button class="tab" role="tab" id="tab-Blog" aria-controls="panel-Blog" aria-selected="false" data-page="pages/Blog/Blog.html">Blog</button>
+ <!-- -->  </nav>
 
-  </nav>
   <main id="content"> </main>
 
 </body>
