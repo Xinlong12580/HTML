@@ -7,16 +7,6 @@
     --border: #ddd;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1115;
-      --fg: #f1f3f7;
-      --muted: #b3b8c3;
-      --link: #8ab4f8;
-      --sidebar: #1c1f27;
-      --border: #2a2f3a;
-    }
-}
 
 * { box-sizing: border-box; }
 body {
