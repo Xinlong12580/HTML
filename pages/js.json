@@ -1,1 +1,6 @@
-[]
+[
+    "Blog/Blog.js",
+    "AboutMe/AboutMe.js",
+    "StudyNote/StudyNote.js",
+    "Research/Research.js"
+]

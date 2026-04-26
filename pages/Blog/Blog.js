@@ -4,7 +4,7 @@ export async function initPage(container){
   const items = await fetch("./data/blogs/blogs.json").then(r => r.json());
 
   blog.innerHTML = items.map(item => `
-    <button data-id="${item}">${item}</button>
+    <button class="blog_button" data-id="${item}">${item.replace(/\.md$/, "")}</button>
   `).join("");
 
   blog.addEventListener("click", async e => {

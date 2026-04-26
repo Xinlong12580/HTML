@@ -1,0 +1,21 @@
+.blog_button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  font-size: 1.1rem; 
+  color: #000;
+
+  cursor: pointer;
+  text-align: left;        
+  display: inline;         
+}
+
+.blog_button:hover {
+  color: #0077cc;         
+}
+
+.blog_button:focus {
+  outline: none;
+}
