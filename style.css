@@ -3,7 +3,7 @@
     --fg: #111111;
     --muted: #666;
     --link: #1a73e8;
-    --sidebar: #f4f5f7;
+    --sidebar: #e9eff5;
     --border: #ddd;
 }
 
@@ -53,6 +53,7 @@ body {
 
 /* Content area */
 .content {
+    padding-left: 20px;
     flex: 1;
     padding: 24px;
     overflow-y: auto;
@@ -66,10 +67,10 @@ h1, h2 {
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
 .hero { display:grid; grid-template-columns: 120px 1fr; gap: 24px; align-items:center; }
 .avatar {
-    width:120px; height:120px; border-radius:50%; object-fit:cover; background:#ddd; border:1px solid var(--border);
+    width:120px; height:120px; object-fit:cover; background:#ddd; border:1px solid var(--border);
 }
 h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 6px; line-height:1.2; }
-.title { color: var(--muted); margin: 0 0 12px; }
+.title {margin: 0 0 12px; }
 .links { display:flex; flex-wrap:wrap; gap:12px; }
 .badge {
   display:inline-block; padding:6px 10px; background:var(--card); border:1px solid var(--border);
